@@ -1,6 +1,28 @@
 name: network_file_cache_workspace
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 publish_to: none
+
+workspace:
+  - example/demo_app
+  - packages/network_cached_image
+  - packages/network_file_cache
+  - packages/network_file_cache_dio
+  - packages/network_file_cache_http
+
+dev_dependencies:
+  melos: ^7.3.0
+
+melos:
+  command:
+    bootstrap:
+      runPubGetInParallel: true
+  scripts:
+    analyze:
+      run: melos exec -- dart analyze
+    test:
+      run: melos exec --dir-exists=test -- flutter test
+    format:
+      run: melos exec -- dart format .

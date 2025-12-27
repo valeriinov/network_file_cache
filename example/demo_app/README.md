@@ -2,7 +2,7 @@
 
 Example app for the network_file_cache mono-repo.
 
-## Dependencies (Tag 0.0.1)
+## Dependencies (Tag 0.0.2)
 
 This example uses git dependencies from the monorepo:
 
@@ -11,17 +11,17 @@ dependencies:
   network_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.1
+      ref: 0.0.2
       path: packages/network_file_cache
   network_file_cache_dio:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.1
+      ref: 0.0.2
       path: packages/network_file_cache_dio
   network_cached_image:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.1
+      ref: 0.0.2
       path: packages/network_cached_image
 ```
 

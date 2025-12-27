@@ -1,12 +1,14 @@
 name: network_cached_image
 description: ImageProvider built on network_file_cache.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.0.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -14,7 +16,7 @@ dependencies:
   network_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.1
+      ref: 0.0.2
       path: packages/network_file_cache
 
 dev_dependencies:

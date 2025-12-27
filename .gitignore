@@ -9,5 +9,6 @@ coverage/
 **/pubspec.lock
 .idea/
 .vscode/
+*.iml
 .share.html
 .share.stream.txt

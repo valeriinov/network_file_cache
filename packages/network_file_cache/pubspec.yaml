@@ -1,11 +1,13 @@
 name: network_file_cache
 description: Core CacheManager utilities for network_file_cache.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/valeriinov/network_file_cache
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.0.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
