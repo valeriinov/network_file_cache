@@ -1,0 +1,31 @@
+name: demo_app
+description: Example app for network_file_cache.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.4.0
+  network_file_cache:
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.0.1
+      path: packages/network_file_cache
+  network_file_cache_dio:
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.0.1
+      path: packages/network_file_cache_dio
+  network_cached_image:
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.0.1
+      path: packages/network_cached_image
+
+flutter:
+  uses-material-design: true

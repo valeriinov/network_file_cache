@@ -1,10 +1,13 @@
-# IDE directories
+.DS_Store
+.dart_tool/
+.packages
+.pub/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/pubspec.lock
 .idea/
 .vscode/
-*.iml
-*.ipr
-*.iws
-
-# OS files
-.DS_Store
-Thumbs.db
+.share.html
+.share.stream.txt

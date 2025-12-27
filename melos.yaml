@@ -1,0 +1,17 @@
+name: network_file_cache
+
+packages:
+  - packages/**
+  - example/**
+
+command:
+  bootstrap:
+    runPubGetInParallel: true
+
+scripts:
+  analyze:
+    run: melos exec -- dart analyze
+  test:
+    run: melos exec -- flutter test
+  format:
+    run: melos exec -- dart format .
