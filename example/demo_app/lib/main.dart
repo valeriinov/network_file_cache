@@ -19,14 +19,21 @@ class DemoApp extends StatelessWidget {
   }
 }
 
-class DemoHome extends StatelessWidget {
-  static const String _imageUrl = 'https://picsum.photos/600';
+class DemoHome extends StatefulWidget {
+  DemoHome({super.key});
 
-  final NetworkCacheManager _cacheManager = NetworkCacheManager(
+  @override
+  State<DemoHome> createState() {
+    return _DemoHomeState();
+  }
+}
+
+class _DemoHomeState extends State<DemoHome> {
+  static const _imageUrl = 'https://picsum.photos/600';
+
+  final _cacheManager = NetworkCacheManager(
     fileService: DioFileService(Dio()),
   );
-
-  DemoHome({super.key});
 
   @override
   Widget build(BuildContext context) {

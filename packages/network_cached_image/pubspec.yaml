@@ -12,9 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
   network_file_cache:
-    path: ../network_file_cache
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.0.1
+      path: packages/network_file_cache
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.0
+  mocktail: ^1.0.4
