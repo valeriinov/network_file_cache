@@ -36,6 +36,7 @@ class HttpFileServiceResponse implements FileServiceResponse {
   @override
   String get fileExtension {
     final contentType = _response.headers[HttpHeaders.contentTypeHeader];
+
     if (contentType == null) {
       return '';
     }

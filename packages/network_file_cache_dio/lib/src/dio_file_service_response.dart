@@ -16,6 +16,7 @@ class DioFileServiceResponse implements FileServiceResponse {
   @override
   int? get contentLength {
     final data = _response.data;
+
     if (data == null) {
       return null;
     }
@@ -41,6 +42,7 @@ class DioFileServiceResponse implements FileServiceResponse {
   @override
   String get fileExtension {
     final contentType = _response.headers.value(HttpHeaders.contentTypeHeader);
+
     if (contentType == null) {
       return '';
     }
