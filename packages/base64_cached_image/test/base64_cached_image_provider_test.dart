@@ -1,5 +1,4 @@
 import 'package:base64_cached_image/base64_cached_image.dart';
-import 'package:base64_file_cache/base64_file_cache.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

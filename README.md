@@ -7,17 +7,18 @@ Transport-agnostic file caching infrastructure for Flutter.
 - base64_cached_image — ImageProvider built on base64_file_cache
 - base64_file_cache — Base64 file cache module
 - network_file_cache — core CacheManager API
-- network_file_cache_dio — Dio adapter
-- network_file_cache_http — http adapter
+- network_file_cache_dio — Dio adapter (re-exports core + image provider)
+- network_file_cache_http — http adapter (re-exports core + image provider)
 - network_cached_image — ImageProvider built on core
 
 ## Usage
 
 ### base64_cached_image
 
+Single import provides `Base64FileCacheManager`, `Base64CacheConfig`, and `Base64CachedImageProvider`.
+
 ```dart
 import 'package:base64_cached_image/base64_cached_image.dart';
-import 'package:base64_file_cache/base64_file_cache.dart';
 import 'package:flutter/material.dart';
 
 class Base64Image extends StatelessWidget {
@@ -41,92 +42,49 @@ class Base64Image extends StatelessWidget {
 }
 ```
 
-### base64_file_cache
-
-```dart
-import 'package:base64_file_cache/base64_file_cache.dart';
-
-Future<void> cacheBase64() async {
-  final cache = Base64FileCacheManager();
-
-  // Raw base64 string
-  final file = await cache.getOrPut('iVBORw0KGgoAAAANSUhEUgAA...');
-
-  // Data URI with MIME type (file extension inferred as .png)
-  final image = await cache.getOrPut(
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...',
-  );
-
-  // Safe variant — returns null instead of throwing on invalid input
-  final maybeFile = await cache.tryGetOrPut(untrustedSource);
-}
-```
-
-### network_file_cache
-
-```dart
-import 'package:network_file_cache/network_file_cache.dart';
-
-Future<void> preloadFile(FileService fileService) async {
-  final cacheManager = NetworkCacheManager(
-    fileService: fileService,
-    config: const NetworkCacheConfig(
-      stalePeriod: Duration(days: 7),
-      maxNrOfCacheObjects: 200,
-    ),
-  );
-
-  await cacheManager.getSingleFile('https://example.com/image.jpg');
-}
-```
-
 ### network_file_cache_dio
+
+Single import provides `NetworkCacheManager`, `NetworkCacheConfig`, `DioFileService`, and `NetworkCachedImageProvider`.
 
 ```dart
 import 'package:dio/dio.dart';
-import 'package:network_file_cache/network_file_cache.dart';
+import 'package:flutter/material.dart';
 import 'package:network_file_cache_dio/network_file_cache_dio.dart';
 
-Future<void> preloadWithDio() async {
+class DioCachedImage extends StatelessWidget {
   final cacheManager = NetworkCacheManager(
     fileService: DioFileService(Dio()),
   );
 
-  await cacheManager.getSingleFile('https://example.com/image.jpg');
+  DioCachedImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Image(
+      image: NetworkCachedImageProvider(
+        'https://picsum.photos/600',
+        cacheManager: cacheManager,
+      ),
+    );
+  }
 }
 ```
 
 ### network_file_cache_http
 
-```dart
-import 'package:http/http.dart';
-import 'package:network_file_cache/network_file_cache.dart';
-import 'package:network_file_cache_http/network_file_cache_http.dart';
-
-Future<void> preloadWithHttp() async {
-  final cacheManager = NetworkCacheManager(
-    fileService: HttpFileService(Client()),
-  );
-
-  await cacheManager.getSingleFile('https://example.com/image.jpg');
-}
-```
-
-### network_cached_image
+Single import provides `NetworkCacheManager`, `NetworkCacheConfig`, `HttpFileService`, and `NetworkCachedImageProvider`.
 
 ```dart
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:network_cached_image/network_cached_image.dart';
-import 'package:network_file_cache/network_file_cache.dart';
 import 'package:network_file_cache_http/network_file_cache_http.dart';
 
-class CachedImage extends StatelessWidget {
+class HttpCachedImage extends StatelessWidget {
   final cacheManager = NetworkCacheManager(
     fileService: HttpFileService(Client()),
   );
 
-  CachedImage({super.key});
+  HttpCachedImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +104,6 @@ class CachedImage extends StatelessWidget {
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:network_file_cache/network_file_cache.dart';
 import 'package:network_file_cache_dio/network_file_cache_dio.dart';
 
 class DioCachedImage extends StatelessWidget {
@@ -172,7 +129,6 @@ class DioCachedImage extends StatelessWidget {
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:network_file_cache/network_file_cache.dart';
 import 'package:network_file_cache_http/network_file_cache_http.dart';
 
 class HttpCachedImage extends StatelessWidget {
@@ -201,16 +157,6 @@ dependencies:
       url: https://github.com/valeriinov/network_file_cache
       ref: 0.0.2
       path: packages/base64_cached_image
-  base64_file_cache:
-    git:
-      url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
-      path: packages/base64_file_cache
-  network_file_cache:
-    git:
-      url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
-      path: packages/network_file_cache
   network_file_cache_dio:
     git:
       url: https://github.com/valeriinov/network_file_cache
@@ -221,11 +167,6 @@ dependencies:
       url: https://github.com/valeriinov/network_file_cache
       ref: 0.0.2
       path: packages/network_file_cache_http
-  network_cached_image:
-    git:
-      url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
-      path: packages/network_cached_image
 ```
 
 ## Development
