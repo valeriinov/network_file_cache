@@ -1,14 +1,14 @@
-# network_file_cache_http
+# base64_file_cache
 
-HTTP adapter for network_file_cache.
+Base64 file cache utilities for network_file_cache.
 
 ## Git Dependency (Tag 0.1.0)
 
 ```yaml
 dependencies:
-  network_file_cache_http:
+  base64_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
       ref: 0.1.0
-      path: packages/network_file_cache_http
+      path: packages/base64_file_cache
 ```

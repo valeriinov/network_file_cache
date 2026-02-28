@@ -7,6 +7,8 @@ publish_to: none
 
 workspace:
   - example/demo_app
+  - packages/base64_cached_image
+  - packages/base64_file_cache
   - packages/network_cached_image
   - packages/network_file_cache
   - packages/network_file_cache_dio

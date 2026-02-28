@@ -1,6 +1,6 @@
 name: network_file_cache_dio
 description: Dio adapter for network_file_cache.
-version: 0.0.2
+version: 0.1.0
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 
@@ -14,10 +14,15 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^5.9.0
+  network_cached_image:
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.1.0
+      path: packages/network_cached_image
   network_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
+      ref: 0.1.0
       path: packages/network_file_cache
 
 dev_dependencies:

@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:network_cached_image/network_cached_image.dart';
-import 'package:network_file_cache/network_file_cache.dart';
 import 'package:network_file_cache_dio/network_file_cache_dio.dart';
 
 void main() {

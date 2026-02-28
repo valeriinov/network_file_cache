@@ -1,14 +1,14 @@
-# network_file_cache_http
+# base64_cached_image
 
-HTTP adapter for network_file_cache.
+ImageProvider built on base64_file_cache.
 
 ## Git Dependency (Tag 0.1.0)
 
 ```yaml
 dependencies:
-  network_file_cache_http:
+  base64_cached_image:
     git:
       url: https://github.com/valeriinov/network_file_cache
       ref: 0.1.0
-      path: packages/network_file_cache_http
+      path: packages/base64_cached_image
 ```

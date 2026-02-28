@@ -1,5 +1,5 @@
-name: network_file_cache_http
-description: HTTP adapter for network_file_cache.
+name: base64_cached_image
+description: ImageProvider built on base64_file_cache.
 version: 0.1.0
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
@@ -13,18 +13,13 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.6.0
-  network_cached_image:
+  base64_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
       ref: 0.1.0
-      path: packages/network_cached_image
-  network_file_cache:
-    git:
-      url: https://github.com/valeriinov/network_file_cache
-      ref: 0.1.0
-      path: packages/network_file_cache
+      path: packages/base64_file_cache
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mocktail: ^1.0.4
