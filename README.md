@@ -4,12 +4,34 @@ Transport-agnostic file caching infrastructure for Flutter.
 
 ## Packages
 
+- base64_file_cache — Base64 file cache module
 - network_file_cache — core CacheManager API
 - network_file_cache_dio — Dio adapter
 - network_file_cache_http — http adapter
 - network_cached_image — ImageProvider built on core
 
 ## Usage
+
+### base64_file_cache
+
+```dart
+import 'package:base64_file_cache/base64_file_cache.dart';
+
+Future<void> cacheBase64() async {
+  final cache = Base64FileCacheManager();
+
+  // Raw base64 string
+  final file = await cache.getOrPut('iVBORw0KGgoAAAANSUhEUgAA...');
+
+  // Data URI with MIME type (file extension inferred as .png)
+  final image = await cache.getOrPut(
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...',
+  );
+
+  // Safe variant — returns null instead of throwing on invalid input
+  final maybeFile = await cache.tryGetOrPut(untrustedSource);
+}
+```
 
 ### network_file_cache
 
@@ -145,6 +167,11 @@ class HttpCachedImage extends StatelessWidget {
 
 ```yaml
 dependencies:
+  base64_file_cache:
+    git:
+      url: https://github.com/valeriinov/network_file_cache
+      ref: 0.0.2
+      path: packages/base64_file_cache
   network_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
