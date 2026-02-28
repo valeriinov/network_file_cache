@@ -77,6 +77,17 @@ class Base64FileCacheManager {
     return _cacheManager.removeFile(effectiveKey);
   }
 
+  String? tryResolveKey(
+    String source, {
+    String? key,
+  }) {
+    try {
+      return resolveKey(source, key: key);
+    } catch (_) {
+      return null;
+    }
+  }
+
   String resolveKey(
     String source, {
     String? key,
