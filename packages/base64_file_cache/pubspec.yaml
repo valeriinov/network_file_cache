@@ -1,6 +1,6 @@
 name: base64_file_cache
 description: Base64 file cache utilities for network_file_cache.
-version: 0.0.2
+version: 0.1.0
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 

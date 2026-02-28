@@ -148,24 +148,24 @@ class HttpCachedImage extends StatelessWidget {
 }
 ```
 
-## Git Dependencies (Tag 0.0.2)
+## Git Dependencies (Tag 0.1.0)
 
 ```yaml
 dependencies:
   base64_cached_image:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
+      ref: 0.1.0
       path: packages/base64_cached_image
   network_file_cache_dio:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
+      ref: 0.1.0
       path: packages/network_file_cache_dio
   network_file_cache_http:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
+      ref: 0.1.0
       path: packages/network_file_cache_http
 ```
 

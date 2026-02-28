@@ -1,6 +1,6 @@
 name: network_cached_image
 description: ImageProvider built on network_file_cache.
-version: 0.0.2
+version: 0.1.0
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 
@@ -16,7 +16,7 @@ dependencies:
   network_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.0.2
+      ref: 0.1.0
       path: packages/network_file_cache
 
 dev_dependencies:
