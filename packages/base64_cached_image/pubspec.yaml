@@ -1,6 +1,6 @@
 name: base64_cached_image
 description: ImageProvider built on base64_file_cache.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 
@@ -16,10 +16,10 @@ dependencies:
   base64_file_cache:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.1.0
+      ref: 0.1.1
       path: packages/base64_file_cache
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.4
+  mocktail: ^1.0.5

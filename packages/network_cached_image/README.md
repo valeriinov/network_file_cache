@@ -2,13 +2,13 @@
 
 ImageProvider built on network_file_cache.
 
-## Git Dependency (Tag 0.1.0)
+## Git Dependency (Tag 0.1.1)
 
 ```yaml
 dependencies:
   network_cached_image:
     git:
       url: https://github.com/valeriinov/network_file_cache
-      ref: 0.1.0
+      ref: 0.1.1
       path: packages/network_cached_image
 ```
