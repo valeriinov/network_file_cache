@@ -1,6 +1,6 @@
 name: base64_file_cache
 description: Base64 file cache utilities for network_file_cache.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/valeriinov/network_file_cache
 publish_to: none
 
@@ -13,10 +13,10 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  crypto: ^3.0.6
+  crypto: ^3.0.7
   flutter_cache_manager: ^3.4.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.4
+  mocktail: ^1.0.5
